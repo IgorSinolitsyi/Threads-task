@@ -1,25 +1,25 @@
 package task_03;
 
 // Исправьте ошибки.
-class Fruits {
+class Fruits extends Thread{
 
-    public Fruits(Thread group, String name) {
+    public Fruits(ThreadGroup group, String name) {
         super(group, name);
     }
-
+    @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName());
+        System.out.println(currentThread().getName());
         for (String fruit : getFruits()) {
             System.out.println(fruit);
             try {
-                Thread.sleep(500);
+                sleep(500);
             } catch (InterruptedException ie) {
-                System.out.println(Thread.currentThread().getName());
+                System.out.println(currentThread().getName());
             }
         }
     }
 
-    private /* ??? **/ getFruits() {
+    private  String[] getFruits() {
         return new String[] {"orange", "apple", "plum"};
     }
 }

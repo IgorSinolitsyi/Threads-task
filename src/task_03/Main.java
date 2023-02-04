@@ -11,21 +11,21 @@ public class Main {
         getBerries(group);
     }
 
-    private static void getFruits(ThreadGroup group) {
+    private static void getFruits(ThreadGroup group) throws InterruptedException {
         Fruits fruits = new Fruits(group, "\nFruits:");
         fruits.start();
-        fruits./* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
+        fruits.join();/* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
     }
 
     private static void getVeges(ThreadGroup group) throws InterruptedException {
         Veges veges = new Veges(group, "\nVeges:");
         veges.start();
-        veges./* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
+        veges.join();/* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
     }
 
-    private static /* ??? **/ getBerries(ThreadGroup group) throws InterruptedException {
+    private static void getBerries(ThreadGroup group) throws InterruptedException {
         Berries berries = new Berries(group, "\nBerries:");
         berries.start();
-        berries/* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
+        berries.join();/* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
     }
 }

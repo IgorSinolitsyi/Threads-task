@@ -8,19 +8,19 @@ public class Main {
     public static void main(String[] args) {
 
         name = "Robot 1.0";
-        getRobotInfo(/* ??? **/);
+        getRobotInfo(getRobot(name));
 
         name = "Robot 2.0";
-        getRobotInfo(/* ??? **/);
+        getRobotInfo(getRobot(name));
     }
 
-    private static /* ??? **/ getRobot(String name) {
+    private static Robot getRobot(String name) {
        return new Robot(name);
     }
 
     private static void getRobotInfo(Robot robot) {
-        System.out.println(robot/* метод взврата имени потока **/ + " state: " + robot/* метод взврата состояния потока **/);
-        robot./* поток стартует **/
-        System.out.println(robot./* метод взврата имени потока **/ + " state: " + robot./* метод взврата состояния потока **/
+        System.out.println(robot.getName()/* метод взврата имени потока **/ + " state: " + robot.getState());/* метод взврата состояния потока **/
+        robot.start();/* поток стартует **/
+        System.out.println(robot.getName()/* метод взврата имени потока **/ + " state: " + robot.getState());/* метод взврата состояния потока **/
     }
 }

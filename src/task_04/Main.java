@@ -7,12 +7,11 @@ public class Main {
 
         Fruits fruits = new Fruits();
         fruits.start();
-        fruits./* метод прерывает этот поток **/
-
-        showVeges();
+        fruits.interrupt();/* метод прерывает этот поток **/
+        showVeges(getVeges());
     }
 
-    private static /* ??? **/ getVeges() {
+    private static String[] getVeges() {
         return new String[]{"tomato", "cucumber", "carrot"};
     }
 

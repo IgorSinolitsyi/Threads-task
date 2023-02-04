@@ -2,19 +2,19 @@ package task_02;
 
 // Исправьте ошибки.
 class Fruits extends Thread {
-
+    @Override
     public void run() {
-        for (Integer fruit : getFruits()) {
+        for (String fruit : getFruits()) {
             System.out.println(fruit);
             try {
-                Thread.sleep(500);
+                sleep(500);
             } catch (InterruptedException ie) {
                 System.out.println("Exception" + ie);
             }
         }
     }
 
-    private /* ??? **/ getFruits() {
+    private String[] getFruits() {
         return new String[] {"orange", "apple", "plum"};
     }
 }
